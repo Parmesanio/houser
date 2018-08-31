@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { postHome } from '../../redux/reducer';
+import { connect } from 'react-redux';
 
 class Wizard extends Component {
     constructor(props) {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import House from '../House/House';
+import { getHomes } from '../../redux/reducer';
+import { connect } from 'react-redux';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -14,5 +16,13 @@ class Dashboard extends Component {
          );
     }
 }
+
+const mapStateToProps = state => {
+    let { houseList } = state;
+    return {
+        houseList
+    }
+
+}
  
-export default Dashboard;
+export default connect(mapStateToProps, {getHomes})(Dashboard);
