@@ -5,15 +5,6 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 class Wizard extends Component {
-
-    handlePost(home_name, address, city, home_state, zip) {
-        axios.post('/api/homes', {home_name, address, city, home_state, zip})
-            .then(() => this.props.history.push('/'))
-            .catch(err => console.log('Err in axios.post', err));
-    }
-    onSubmit(event) {
-        event.preventDefault();
-    }
     render() { 
         let { getName, getAddress, getCity, getState, getZip, home_name, address, city, home_state, zipcode } = this.props;
         return ( 
@@ -22,7 +13,7 @@ class Wizard extends Component {
                     <h1>Add New Listing</h1>
                     <Link to='/'>Cancel</Link>
                 </div>
-                <form onSubmit={(event) => this.onSubmit(event)}>
+                <form>
                     <label>Property Name</label>
                     <input type="text" onChange={(event) => getName(event.target.value)} value={home_name} />
                     <label>Address</label>
