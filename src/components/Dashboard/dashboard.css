@@ -1,0 +1,21 @@
+.dashboard {
+    background: #e5f4ec;
+    width: 55%;
+    margin: 0 auto;
+    padding: 1em;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header > * {
+    display: inline-block;
+}
+.header a {
+    background: #8aea92;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 20px;
+}

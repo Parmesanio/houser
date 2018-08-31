@@ -1,0 +1,24 @@
+.house {
+    background: #dedede;
+    display: flex;
+    margin: 1em 0;
+    position: relative;
+}
+.house img {
+    margin: 1em;
+}
+.details {
+    margin: 0 0 0 1em;
+}
+.mortgage {
+    margin-left: 5em;
+}
+.delete {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.5em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

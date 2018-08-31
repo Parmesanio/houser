@@ -16,19 +16,21 @@ const WizardThree = (props) => {
 
     let { getMortgage, getRent, home_name, address, city, home_state, zipcode, mortgage, rent, home_url } = props;
     return ( 
-        <div>
-            <div>
+        <div className="dashboard">
+            <div className="header">
                     <h1>Add New Listing</h1>
-                    <Link to='/'>Cancel</Link>
+                    <Link id="cancel"  to='/'>Cancel</Link>
                 </div>
-                <h4>Recommended Rent: ${rent * 1.25}</h4>
-            <form onSubmit={(event) => onSubmit(event)}>
+            <form className="step wizard3" onSubmit={(event) => onSubmit(event)}>
+            <h4>Recommended Rent: ${rent * 1.25}</h4>
+            <div className="moreDetails">
                 <label>Monthly Mortgage Amount</label>
                 <input type='number' onChange={(event) => getMortgage(event.target.value)} />
                 <label>Desired Monthly Rent</label>
                 <input type='number' onChange={(event) => getRent(event.target.value)} />
-                <Link to='/wizard/step-2'>Previous</Link>
-                <button onClick={() => handlePost(home_name, address, city, home_state, zipcode, home_url, mortgage, rent)}>Complete</button>
+                </div>
+                <Link className="previous" to='/wizard/step-2'>Previous</Link>
+                <button className="next" onClick={() => handlePost(home_name, address, city, home_state, zipcode, home_url, mortgage, rent)}>Complete</button>
             </form>
         </div>
      );

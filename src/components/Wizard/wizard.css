@@ -1,0 +1,62 @@
+.step {
+    position: relative;
+    min-height: 300px;
+}
+form {
+    position: relative;
+}
+#cancel {
+    background: #fec2c2;
+}
+input, label {
+    display: block;
+}
+input[type="number"] {
+    margin-bottom: 1em;
+}
+label {
+    font-weight: bold;
+    margin: 1em;
+}
+.step1 input:nth-child(4) {
+    width: 100%;
+}
+.moreDetails {
+    display: inline-block;
+    width: 30%;
+}
+.wizard2 .moreDetails, .wizard3 .moreDetails {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+.wizard3 .moreDetails {
+    text-align: left;
+}
+.wizard2 .moreDetails input, .wizard3 .moreDetails input {
+    width: 100%;
+}
+.next, .previous {
+    background: #3b5249;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.previous {
+    right: 86%;
+}
+.wizard3 h4 {
+    margin-bottom: 3em;
+    text-align: center;
+}
+.wizard3 .next {
+    background: #8aea92;
+    border: none;
+    color: #3b5249;
+    font-size: .8em;
+    font-weight: 500;
+}

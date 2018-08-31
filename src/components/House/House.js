@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './house.css';
 
 const House = (props) => {
     console.log(props);
@@ -11,17 +12,21 @@ const House = (props) => {
             .catch(err => console.log('Err in axios.delete', err));
     }
     return ( 
-        <div>
+        <div className="house">
             <img src={home_url} alt={home_name} />
+            <div className="details">
             <p>Property Name: {home_name}</p>
             <p>Address: {address}</p>
             <p>City: {city}</p>
             <p>State: {state}</p>
             <p>Zip: {zipcode}</p>
-            <p>Mortgage: {mortgage}</p>
-            <p>Rent: {rent}</p>
+            </div>
+            <div className="mortgage">
+            <p>Monthly Mortgage: {mortgage}</p>
+            <p>Desired Rent: {rent}</p>
             <Link to={`/wizard/${id}`}>Edit</Link>
-            <button onClick={() => handleDelete(id)}>X</button>
+            </div>
+            <button className="delete" onClick={() => handleDelete(id)}>X</button>
         </div>
      );
 }

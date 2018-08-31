@@ -4,13 +4,15 @@ import { getHomes } from '../../redux/reducer';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './dashboard.css';
 
 class Dashboard extends Component {
     componentDidMount() {
-        axios.get('/api/homes')
+        setTimeout(() => 
+            axios.get('/api/homes')
                 .then(res => {
                     this.props.getHomes(res.data)
-                }).catch(err => console.log('Err in axios.get', err))
+                }).catch(err => console.log('Err in axios.get', err)), 500)
     }
 
     render() { 
@@ -20,11 +22,12 @@ class Dashboard extends Component {
             return <House key={id} {...home} />
         });
         return ( 
-            <div>
-                <div>
+            <div className="dashboard">
+                <div className="header">
                     <h1>Dashboard</h1>
                     <Link to='/wizard'>Add New Property</Link>
                 </div>
+                <hr />
                 <h4>Home Listings</h4>
                 {mappedHomes}
             </div>
