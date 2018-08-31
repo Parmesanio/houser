@@ -40,5 +40,10 @@ const mapStateToProps = state => {
     }
 
 }
+
+const mapDispatchToProps = {
+        getHomes
+}
+//.match, running npm builds
  
-export default connect(mapStateToProps, {getHomes})(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

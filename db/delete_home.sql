@@ -1,0 +1,1 @@
+delete from homes where id = $1;
