@@ -11,5 +11,6 @@ export default (
         <Route exact path='/wizard' component={Wizard} />
         <Route exact path='/wizard/step-2' component={WizardTwo} />
         <Route exact path='/wizard/step-3' component={WizardThree} />
+        <Route exact path='/wizard/:id' component={Wizard} />
     </Switch>
 );

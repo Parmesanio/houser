@@ -7,11 +7,10 @@ import axios from 'axios';
 
 class Dashboard extends Component {
     componentDidMount() {
-        setTimeout(() => 
-            axios.get('/api/homes')
+        axios.get('/api/homes')
                 .then(res => {
                     this.props.getHomes(res.data)
-                }).catch(err => console.log('Err in axios.get', err)), 500)
+                }).catch(err => console.log('Err in axios.get', err))
     }
 
     render() { 
@@ -44,6 +43,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
         getHomes
 }
-//.match, running npm builds
+//running npm builds
  
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

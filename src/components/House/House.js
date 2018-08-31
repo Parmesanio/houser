@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const House = (props) => {
     console.log(props);
@@ -19,6 +20,7 @@ const House = (props) => {
             <p>Zip: {zipcode}</p>
             <p>Mortgage: {mortgage}</p>
             <p>Rent: {rent}</p>
+            <Link to={`/wizard/${id}`}>Edit</Link>
             <button onClick={() => handleDelete(id)}>X</button>
         </div>
      );
